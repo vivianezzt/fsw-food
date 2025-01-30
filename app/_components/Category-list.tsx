@@ -1,9 +1,15 @@
-const CategoryList = () => {
+import { db } from "../_lib/prima";
+import CategoryItem from "./Category-item";
+
+const CategoryList = async () => {
   // pegar as categorias do banco de dados
   // renderizar um item para cada categoria
+  const categories = await db.category.findMany({});
   return (
-    <div>
-      <h1>Dados</h1>
+    <div className="grid grid-cols-2 gap-3">
+      {categories.map((category) => (
+        <CategoryItem key={category.id} category={category} />
+      ))}
     </div>
   );
 };
