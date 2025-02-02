@@ -2,6 +2,7 @@ import Image from "next/image";
 import CategoryList from "./_components/Category-list";
 import Header from "./_components/Header";
 import Search from "./_components/Search";
+import ProductList from "./_components/Product-list";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
           quality={100}
         />
       </div>
+      <ProductList />
     </>
   );
 }

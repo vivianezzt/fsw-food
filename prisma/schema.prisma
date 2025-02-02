@@ -13,18 +13,18 @@ model Restaurant {
   imageUrl            String
   deliveryFee         Decimal    @db.Decimal(10, 2)
   deliveryTimeMinutes Int
-  category            Category[]
+  categories           Category[]
 
-  product Product[]
+  products Product[]
 }
 
 model Category {
   id          String       @id @default(uuid())
   name        String
   imageUrl    String
-  restaurants Restaurant[]
+  restaurant Restaurant[]
 
-  product Product[]
+  products Product[]
 }
 
 model Product {
